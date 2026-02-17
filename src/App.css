@@ -176,3 +176,266 @@
 .inputError {
   border-color: rgba(176, 0, 32, 0.6);
 }
+
+
+/* --- Workbook layout --- */
+.workbook {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wbTop {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wbTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wbName {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.wbHint {
+  opacity: 0.75;
+}
+
+.purposeBar {
+  padding: 14px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+}
+
+.wbBody {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 14px;
+  align-items: start;
+}
+
+.wbGrid {
+  min-width: 0;
+}
+
+.wbPanel {
+  position: sticky;
+  top: 16px;
+}
+
+/* --- Sheet grid --- */
+.sheetWrap {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  overflow: auto;
+  height: calc(100vh - 260px);
+  background: white;
+}
+
+.sheet {
+  display: grid;
+  min-width: max-content;
+}
+
+.sheetCorner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: rgba(0,0,0,0.04);
+  border-right: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  height: 54px;
+}
+
+.sheetColHeader {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 54px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.04);
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-right: 1px solid rgba(0,0,0,0.08);
+  text-align: left;
+  cursor: pointer;
+}
+
+.sheetColHeader.selected {
+  outline: 2px solid rgba(0,0,0,0.25);
+  outline-offset: -2px;
+}
+
+.sheetColHeaderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.sheetColLetter {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.sheetTypePill {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.15);
+  opacity: 0.75;
+}
+
+.sheetTypePill.typed {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.sheetColHeaderLabel {
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sheetRow {
+  display: contents;
+}
+
+.sheetRowHeader {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: rgba(0,0,0,0.04);
+  border-right: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 8px 10px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+.sheetCell {
+  border: none;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 8px 10px;
+  height: 36px;
+  font-size: 14px;
+  outline: none;
+}
+
+.sheetCell:focus {
+  outline: 2px solid rgba(0,0,0,0.25);
+  outline-offset: -2px;
+}
+
+/* --- Right panel --- */
+.panel {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(0,0,0,0.04);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.panelTitle {
+  font-weight: 800;
+}
+
+.panelBody {
+  padding: 12px;
+}
+
+.panelEmpty {
+  opacity: 0.75;
+  line-height: 1.4;
+}
+
+.sheetCellInvalid {
+  outline: 2px solid rgba(176, 0, 32, 0.7);
+  outline-offset: -2px;
+}
+
+.sheetCellSelect {
+  border: none;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 8px 10px;
+  height: 36px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+  appearance: none;
+}
+.sheetCellSelect:focus {
+  outline: 2px solid rgba(0,0,0,0.25);
+  outline-offset: -2px;
+}
+
+/* Make column header text readable */
+.sheetColHeader {
+  color: #111;
+}
+
+.sheetColHeaderLabel {
+  color: #111;
+}
+
+.sheetColLetter {
+  color: rgba(0,0,0,0.7);
+}
+
+.sheetTypePill {
+  color: rgba(0,0,0,0.75);
+  background: rgba(255,255,255,0.7);
+}
+
+.sheetTypePill.typed {
+  color: #111;
+  background: rgba(255,255,255,0.9);
+}
+
+.sheetCellComputed {
+  background: rgba(0,0,0,0.03);
+  cursor: not-allowed;
+}
+
+/* Ensure all sheet cells have visible text */
+.sheetCell,
+.sheetCellSelect,
+.sheetCellComputed {
+  color: #111;
+  background: white;
+}
+
+/* Slight visual distinction for computed cells */
+.sheetCellComputed {
+  background: rgba(0, 0, 0, 0.04);
+  font-weight: 600;
+}
+
+.panelDivider {
+  height: 1px;
+  background: rgba(0,0,0,0.10);
+}
